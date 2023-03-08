@@ -1,0 +1,7 @@
+{
+    "window.menuBarVisibility": "classic",
+    "workbench.colorTheme": "Default Dark+",
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "git.autofetch": true
+}
