@@ -48,13 +48,4 @@ echo -e "${GREEN}Setting Zsh as the default shell for the current user...${RESET
 echo "export SHELL=$(which zsh)" >> ~/.bashrc &>/dev/null
 echo "exec $(which zsh) -l" >> ~/.bashrc &>/dev/null
 
-# ---- CONFIGURE GIT ----
-echo -e "${GREEN}Configuring Git...${RESET}"
-echo "${YELLOW}Enter your Git name:${RESET}"
-read git_name
-echo "${YELLOW}Enter your Git email:${RESET}"
-read git_email
-git config --global user.name "$git_name"
-git config --global user.email "$git_email"
-
 echo -e "${GREEN}Development environment setup complete.${RESET}"
