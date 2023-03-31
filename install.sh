@@ -19,9 +19,8 @@ echo -e "${YELLOW}${PACKAGE} Installing Homebrew...${RESET}"
 
 # ---- ADD HOMEBREW TO PATH ----
 echo -e "${GREEN}Adding Homebrew to PATH...${RESET}"
-BREW_PATH='eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
-echo $BREW_PATH >> /home/coder/.profile &>/dev/null
-echo $BREW_PATH >> /home/coder/.bashrc &>/dev/null
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/coder/.bash_profile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # ---- LOAD HOMEBREW ENV VARIABLES ----
 echo -e "${YELLOW}Loading Homebrew environment variables...${RESET}"
