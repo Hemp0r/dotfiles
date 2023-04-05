@@ -12,39 +12,3 @@ PACKAGE="📦"
 # ---- CONFIGURE VS CODE SETTINGS ----
 echo -e "${GREEN}Configuring VS Code settings...${RESET}"
 cp vscode/settings.json ~/.local/share/code-server/User/settings.json &>/dev/null
-
-# ---- INSTALL HOMEBREW ----
-echo -e "${YELLOW}${PACKAGE} Installing Homebrew...${RESET}"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &>/dev/null
-
-# ---- ADD HOMEBREW TO PATH ----
-echo -e "${GREEN}Adding Homebrew to PATH...${RESET}"
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/coder/.bash_profile
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# ---- LOAD HOMEBREW ENV VARIABLES ----
-echo -e "${YELLOW}Loading Homebrew environment variables...${RESET}"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" &>/dev/null
-
-# ---- INSTALL BUILD-ESSENTIAL PACKAGE ----
-echo -e "${GREEN}${PACKAGE} Installing build-essential...${RESET}"
-sudo apt-get install build-essential -y &>/dev/null
-
-# ---- INSTALL GCC ----
-echo -e "${YELLOW}${PACKAGE} Installing GCC...${RESET}"
-brew install gcc &>/dev/null
-
-# ---- INSTALL ZSH ----
-echo -e "${GREEN}${PACKAGE} Installing Zsh...${RESET}"
-brew install zsh &>/dev/null
-
-# ---- INSTALL OH MY ZSH ----
-echo -e "${YELLOW}${PACKAGE} Installing Oh My Zsh...${RESET}"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &>/dev/null
-
-# ---- SET ZSH AS DEFAULT SHELL FOR CURRENT USER ----
-echo -e "${GREEN}Setting Zsh as the default shell for the current user...${RESET}"
-echo "export SHELL=$(which zsh)" >> ~/.bashrc &>/dev/null
-echo "exec $(which zsh) -l" >> ~/.bashrc &>/dev/null
-
-echo -e "${GREEN}Development environment setup complete.${RESET}"
