@@ -11,4 +11,4 @@ PACKAGE="📦"
 
 # ---- CONFIGURE VS CODE SETTINGS ----
 echo -e "${GREEN}Configuring VS Code settings...${RESET}"
-cp vscode/settings.json ~/.local/share/code-server/User/settings.json &>/dev/null
+mkdir -p ~/.local/share/code-server/User/ && cp vscode/settings.json ~/.local/share/code-server/User/settings.json &>/dev/null
